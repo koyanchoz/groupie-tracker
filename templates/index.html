@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" href="/templates/assets/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/templates/style.css" />
+
+    <title>Groupie Tracker</title>
+  </head>
+  <body id="title">
+      <div class="container-fluid mb-2">
+        <!--Title-->
+        <h1 class="text-center display-1 "><strong>Groupie Tracker</strong></h1>
+      </div>
+      <form action="/artist" method="get">
+        <div class="row group_row">
+          {{range . }}
+          <!-- col-xl-auto col-lg-auto col-md-auto col-sm-auto mb-3 -->
+          <div class="col-xl-auto col-lg-auto col-md-auto col-sm-auto mb-3 card-parent" >
+            <div class="card border-secondary rounded">
+              <!-- width="322" -->
+              <img
+                src="{{ .Image }}"
+                class="card-img-top border-bottom border-secondary img-rounded group_img"
+                
+                alt="Image_Group"
+              />
+              <!-- height="322" -->
+              <div class="card-body">
+                <h4 class="card-title text-black">{{ .Name }}</h4>
+                <a class="button" href="/artist/{{.ID}}">
+                  More Info
+                </a>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </form>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+      integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </body>
+</html>

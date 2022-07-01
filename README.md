@@ -1,4 +1,4 @@
-:hamster: *GROUPIE-TRACKER** :rabbit:
+:hamster: **GROUPIE-TRACKER** :rabbit:
 ================================
 About
 ================================
